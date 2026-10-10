@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Trip Handled — Explore China your way. We've got your back.</title>
+<meta name="description" content="Get a free second opinion on your China itinerary, and real local help on call while you travel independently. You explore — someone has your back.">
+<style>
+  :root{
+    --ink:#1a1a1a; --paper:#faf9f6; --accent:#c8442c; --muted:#6b6b6b; --line:#e5e2db;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.65;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+  header{padding:28px 0;border-bottom:3px solid var(--ink);}
+  header .brand{font-weight:bold;font-size:18px;letter-spacing:.5px;}
+  header .brand span{color:var(--accent);}
+  .hero{padding:72px 0 56px;border-bottom:1px solid var(--line);}
+  .hero h1{font-size:clamp(34px,6vw,52px);line-height:1.15;font-weight:normal;}
+  .hero h1 em{font-style:italic;color:var(--accent);}
+  .hero p.sub{margin-top:22px;font-size:19px;color:var(--muted);max-width:580px;}
+  .who{padding:44px 0;border-bottom:1px solid var(--line);}
+  .who ul{list-style:none;}
+  .who li{font-size:19px;padding:8px 0;border-bottom:1px dashed var(--line);}
+  .who li:last-child{border-bottom:none;}
+  .who li::before{content:"— ";color:var(--accent);}
+  section{padding:48px 0;border-bottom:1px solid var(--line);}
+  h2{font-size:26px;font-weight:normal;margin-bottom:16px;}
+  h2 small{display:block;font-size:14px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+  .cta{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;padding:14px 30px;font-size:17px;margin-top:22px;font-family:inherit;cursor:pointer;border:none;}
+  .cta:hover{background:var(--accent);}
+  .textlink{display:inline-block;margin-top:14px;font-size:15px;color:var(--muted);text-decoration:underline;}
+  .textlink:hover{color:var(--accent);}
+  /* Artifact card */
+  .artifact{background:#fff;border:1px solid var(--line);box-shadow:0 2px 14px rgba(0,0,0,.06);padding:28px 26px;margin-top:26px;font-size:15px;}
+  .artifact .a-head{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:14px;}
+  .artifact .a-title{font-size:18px;margin-bottom:4px;}
+  .artifact .a-route{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .artifact table{width:100%;border-collapse:collapse;margin:10px 0;}
+  .artifact td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .artifact td.tag{white-space:nowrap;width:110px;font-weight:bold;}
+  .t-keep{color:#2c6e49;} .t-cut{color:var(--accent);} .t-repl{color:#1f5673;} .t-real{color:#8a6d1f;}
+  .artifact .a-why{color:var(--muted);font-size:14px;}
+  .artifact .a-fix{margin-top:16px;border-top:2px solid var(--ink);padding-top:12px;}
+  .artifact .a-fix b{font-size:15px;}
+  .artifact ol{margin:8px 0 0 20px;}
+  .artifact li{padding:3px 0;}
+  .artifact .a-note{font-size:12.5px;color:var(--muted);margin-top:16px;font-style:italic;}
+  /* L2 cases */
+  ul.plain{list-style:none;}
+  ul.plain li{padding:9px 0;border-bottom:1px dashed var(--line);font-size:16px;}
+  ul.plain li:last-child{border-bottom:none;}
+  ul.plain li b.act{color:var(--accent);}
+  /* Boundary */
+  .boundary{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px;}
+  .boundary h3{font-size:16px;margin-bottom:10px;}
+  .boundary ul{list-style:none;font-size:15px;}
+  .boundary li{padding:6px 0;border-bottom:1px dashed var(--line);}
+  .no li::before{content:"✕ ";color:var(--accent);}
+  .yes li::before{content:"✓ ";color:#2c6e49;}
+  .hours{font-size:14px;color:var(--muted);margin-top:16px;}
+  .price-line{font-size:17px;margin-top:22px;}
+  .price-line b{color:var(--accent);}
+  /* ChatGPT section */
+  .quote{font-size:22px;font-style:italic;border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:22px 0;color:#333;}
+  /* Form */
+  .form{margin-top:24px;}
+  .form label{display:block;font-size:14px;margin:16px 0 4px;letter-spacing:.5px;}
+  .form input,.form textarea{width:100%;padding:10px 12px;font-family:inherit;font-size:15px;border:1px solid var(--line);background:#fff;}
+  .form textarea{min-height:90px;}
+  .form .hint{font-size:12.5px;color:var(--muted);}
+  .form .choice{display:block;font-size:15px;margin:5px 0;font-weight:normal;}
+  .form .choice input{width:auto;margin-right:8px;}
+  .form .checks{padding:4px 0;}
+  footer{padding:36px 0 60px;font-size:14px;color:var(--muted);}
+  footer a{color:var(--ink);}
+  @media(max-width:600px){
+    .hero{padding:48px 0 40px;}
+    .boundary{grid-template-columns:1fr;}
+    .artifact{padding:20px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="brand">CHINA TRIP <span>HANDLED</span></div>
+</div></header>
+
+<!-- ① Emotional promise -->
+<div class="hero"><div class="wrap">
+  <h1>Explore China your way.<br><em>We've got your back.</em></h1>
+  <p class="sub">Independent travel in China, with a trusted local on your side.<br>
+  No tour group. No rigid itinerary. Just real help when you need it.</p>
+</div></div>
+
+<!-- ② Who this is for -->
+<div class="who"><div class="wrap">
+  <ul>
+    <li>Planning your first independent trip to China?</li>
+    <li>Already have an itinerary, but not sure it actually works?</li>
+    <li>Want to travel on your own — without being completely on your own?</li>
+  </ul>
+</div></div>
+
+<!-- ③ L1 — Free Trip Review -->
+<section><div class="wrap">
+  <h2><small>Free</small>Get a second opinion on your China trip — free</h2>
+  <p>Send us your itinerary. Within 48 hours, we'll send back a one-page <b>Trip Review</b>:</p>
+  <p style="font-size:20px;letter-spacing:1px;margin-top:10px;"><b>KEEP · CUT · REPLACE · REALLOCATE</b></p>
+  <p style="margin-top:14px;">Not another itinerary. A second opinion on the one you already have — based on your travel style and what actually works on the ground in China.</p>
+  <p class="hint" style="font-size:15px;color:var(--muted);margin-top:10px;">AI-generated itinerary? Even better. Send it over.</p>
+</div></section>
+
+<!-- ④ The artifact -->
+<section><div class="wrap">
+  <h2><small>The artifact</small>What a Trip Review actually looks like</h2>
+  <div class="artifact">
+    <div class="a-head">Trip Review · Example of the format</div>
+    <div class="a-title">12 days · first time in China · couple</div>
+    <div class="a-route">Beijing → Xi'an → Chengdu → Zhangjiajie → Shanghai</div>
+    <table>
+      <tr><td class="tag t-keep">KEEP</td><td>Beijing — 4 nights <span class="a-why">· You told us you like slow mornings and museums — Beijing rewards that. But Forbidden City tickets release 7 days ahead at 20:00 Beijing time; your current plan assumes same-week availability.</span></td></tr>
+      <tr><td class="tag t-cut">CUT</td><td>Xi'an from 3 nights → 2 <span class="a-why">· Your Day 6 adds ~5h of transit for one half-day experience. With your preference for slower travel, that trade-off isn't worth it.</span></td></tr>
+      <tr><td class="tag t-real">REALLOCATE</td><td>+1 night to Zhangjiajie <span class="a-why">· The park needs 2 full days minimum; on your current plan you'd get 1, with a 3-hour transfer on each side.</span></td></tr>
+      <tr><td class="tag t-repl">REPLACE</td><td>Chengdu panda base at 10am → at 7:30am <span class="a-why">· Active at feeding time, asleep by mid-morning — and the only uncrowded hour of the day.</span></td></tr>
+    </table>
+    <div class="a-fix">
+      <b>Top 3 fixes this week</b>
+      <ol>
+        <li>Set an alarm for the Forbidden City release — 7 days before your date, 20:00 Beijing time. Your plan currently assumes same-week availability.</li>
+        <li>Your Xi'an → Chengdu train arrives 23:40 — that kills the panda morning. Move it one day earlier.</li>
+        <li>Two of your Beijing hotels don't accept foreign guests. Verify before you pay.</li>
+      </ol>
+    </div>
+    <div class="a-note">Questions about this review? Reply in the same thread. Want someone on call during the trip itself? See below.</div>
+  </div>
+  <p class="hint" style="font-size:13px;color:var(--muted);margin-top:10px;">Shown here as a sample of the format. Your review is written for your trip, your style, your dates.</p>
+</div></section>
+
+<!-- ⑤ L2 -->
+<section><div class="wrap">
+  <h2><small>On-call support</small>Travel independently. Get real local help when you need it.</h2>
+  <p>For your entire stay in China, one WhatsApp chat connects you to someone who actually lives here. The moments that actually happen:</p>
+  <ul class="plain">
+    <li>Your hotel won't check you in → <b class="act">we contact the hotel, help clarify the issue, and find alternatives if needed</b></li>
+    <li>Train tickets sold out, or the date's wrong → <b class="act">we help you understand the options and find the best alternative</b></li>
+    <li>The restaurant won't accept a foreign phone number → <b class="act">we contact them and help arrange the booking</b></li>
+    <li>Alipay suddenly declines → <b class="act">we help you figure out why and get it working</b></li>
+    <li>Plans change mid-trip → <b class="act">we re-think the route with you</b></li>
+  </ul>
+  <p style="margin-top:18px;color:var(--muted);">We guide you, contact them for you, help you arrange it, troubleshoot with you — and for the few things where we can truly own the result, we handle it. We'll always tell you which is which, before you pay.</p>
+</div></section>
+
+<!-- ⑥ Service boundary + price -->
+<section><div class="wrap">
+  <h2><small>Straight talk</small>What's included — and what's not</h2>
+  <div class="boundary">
+    <div class="yes">
+      <h3>Included</h3>
+      <ul>
+        <li>Unlimited messages for up to 10 days of on-call support</li>
+        <li>We contact hotels &amp; restaurants for you</li>
+        <li>Help re-booking trains &amp; tickets (you approve, we assist)</li>
+        <li>Route re-planning when plans change</li>
+        <li>Payment &amp; app troubleshooting</li>
+        <li>Honest answers, including "don't go there that day"</li>
+      </ul>
+    </div>
+    <div class="no">
+      <h3>Not included</h3>
+      <ul>
+        <li>We don't travel with you</li>
+        <li>We're not a tour operator — no group tours, no transport packages</li>
+        <li>We're not an emergency service (for real emergencies: 110 / 120 / 119 first, then us)</li>
+        <li>Third-party costs (tickets, rooms, drivers) are yours</li>
+        <li>We can't conjure a sold-out train — we'll say so and find you the next best option</li>
+      </ul>
+    </div>
+  </div>
+  <p class="hours">Response hours: 08:00–24:00 Beijing time, every day of your trip. Overnight = best effort, and we'll say when we're asleep.</p>
+  <p class="price-line"><b>Founding Traveler — $99</b><br>
+  <span style="font-size:14.5px;color:var(--muted);">Up to 10 days of on-call support in China. Limited to the first 10 travelers.</span></p>
+  <a class="cta" href="#start">Start with a free Trip Review</a>
+  <a class="textlink" href="https://wa.me/8613166109830?text=Hi%20%E2%80%94%20I%27m%20interested%20in%20the%20Founding%20Traveler%20on-call%20support%20(%2499).%20My%20trip%20dates%3A%20">Already have your trip planned? Ask about on-call support →</a>
+</div></section>
+
+<!-- ⑦ Why not just ChatGPT? -->
+<section><div class="wrap">
+  <h2>Why not just ChatGPT?</h2>
+  <div class="quote">AI gives you answers. We help when the answer isn't enough.</div>
+  <p>Ask AI how to book a restaurant — you'll get clear instructions. Message us when the restaurant won't accept a foreign number — and we'll figure out what to do next, with you.</p>
+</div></section>
+
+<!-- ⑧ CTA -->
+<section id="start"><div class="wrap">
+  <h2>Start with a free Trip Review</h2>
+  <p>Tell us about your trip. We reply within 24 hours. No payment, no strings.</p>
+  <div class="form">
+    <label>Travel dates</label>
+    <input id="f-dates" type="text" placeholder="e.g. Nov 8 – Nov 20">
+    <label>Your itinerary (rough is fine)</label>
+    <textarea id="f-plan" placeholder="Paste your itinerary, or just list cities and days"></textarea>
+    <label>How do you like to travel?</label>
+    <input id="f-style" type="text" placeholder="e.g. nature over landmarks, no tour groups, food-focused">
+    <label>Is this your first trip to China?</label>
+    <label class="choice"><input type="radio" name="f-first" value="Yes"> Yes</label>
+    <label class="choice"><input type="radio" name="f-first" value="No"> No</label>
+    <label>Your biggest concerns (pick any)</label>
+    <div class="checks">
+      <label class="choice"><input type="checkbox" value="Booking tickets"> Booking tickets</label>
+      <label class="choice"><input type="checkbox" value="Payments"> Payments</label>
+      <label class="choice"><input type="checkbox" value="Getting around"> Getting around</label>
+      <label class="choice"><input type="checkbox" value="Language"> Language</label>
+      <label class="choice"><input type="checkbox" value="Hotels"> Hotels</label>
+      <label class="choice"><input type="checkbox" value="Food &amp; reservations"> Food &amp; reservations</label>
+      <label class="choice"><input type="checkbox" value="Not sure where to go"> Not sure where to go</label>
+      <label class="choice"><input type="checkbox" value="Something else"> Something else</label>
+    </div>
+    <button class="cta" onclick="send()">Continue on WhatsApp →</button>
+    <p class="hint" style="margin-top:10px;">Opens WhatsApp with your trip details pre-filled. Just hit send.</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  China Trip Handled · Independent travel support for visitors to China<br>
+  Looking for something more unusual? Remote routes, local experiences or something special — <a href="#start">tell us what you have in mind</a>.
+</div></footer>
+
+<script>
+function send(){
+  var first = document.querySelector('input[name="f-first"]:checked');
+  var concerns = [].slice.call(document.querySelectorAll('.checks input:checked')).map(function(c){return c.value;}).join(', ');
+  var msg = "Hi! I'd like a free China Trip Review \ud83d\udc4b\n\n"
+    + "Dates: " + document.getElementById('f-dates').value + "\n"
+    + "First time in China: " + (first ? first.value : '') + "\n"
+    + "Travel style: " + document.getElementById('f-style').value + "\n"
+    + "Biggest concerns: " + concerns + "\n\n"
+    + "My itinerary:\n"
+    + document.getElementById('f-plan').value;
+  window.open("https://wa.me/8613166109830?text=" + encodeURIComponent(msg), "_blank");
+}
+</script>
+
+</body>
+</html>
